@@ -8,5 +8,11 @@ In this project IR sensors, LCD display, relay etc were also used apart from Ard
 
 # Obstacle Avoider 
 
+An obstacle avoider car that using Arduino that uses ultrasonic sensors to detect the presence of obstacles in front of it and hence avoids collisions.
+
+# Sensor Harp
+
+A harp(musical instrument) with no actual strings, that produces music by obstructing the path of the ultrasonic sensors and gives out different notes based on the distance of the obstacle from the sensor.
+
 
 
