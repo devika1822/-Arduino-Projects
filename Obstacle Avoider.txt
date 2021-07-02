@@ -1,0 +1,59 @@
+int trig=6; int echo=7;float dist;float duration;
+int motorpin1=12;
+int motorpin2=10;
+int enA=11;
+int motorpin3=6,motorpin4=7,enB=5;
+trig=3,echo=2; float dist, duration;
+void setup()
+{Serial.begin(9600);
+pinMode(motorpin1,OUTPUT);
+pinMode(motorpin2,OUTPUT);
+pinMode(enA,OUTPUT);
+pinMode(motorpin3,OUTPUT);
+pinMode(motorpin4,OUTPUT);
+pinMode(enA,OUTPUT);
+pinMode(8,HIGH);
+
+}
+
+void loop()
+{ 
+  
+digitalWrite(trig,LOW);
+delay(2);
+digitalWrite(trig,HIGH);
+delay(10);
+digitalWrite(trig,LOW);
+duration=pulseIn(echo,HIGH);
+dist=(.0170*duration);
+delay(1000);  
+if(dist>.15)
+ {digitalWrite(motorpin1,LOW);
+digitalWrite(motorpin2,HIGH);
+analogWrite(enA,255);
+Serial.print("MOVE FORWARD\n");
+
+
+digitalWrite(motorpin3,LOW);
+digitalWrite(motorpin4,HIGH);
+analogWrite(enB,255);
+Serial.print("MOVE FORWARD\n");
+
+}
+
+ else if(dist<=.15)
+{ 
+digitalWrite(motorpin1,LOW);
+digitalWrite(motorpin2,LOW);
+analogWrite(enA,255);
+Serial.print("STOP\n");
+delay(1000);
+
+
+digitalWrite(motorpin3,LOW);
+digitalWrite(motorpin4,LOW);
+analogWrite(enB,255);
+Serial.print("STOP\n");
+delay(1000);
+}
+}
